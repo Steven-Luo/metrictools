@@ -60,7 +60,9 @@ var FnordMetricChart = function(viewport, params) {
   }
 
   function renderSummaries(result) {
-
+    var elem = viewport.querySelector(".fm-chart-summary");
+    var summary = new FnordMetricChart.Summary(elem, params);
+    summary.render(result);
   }
 
   function renderSeriesList(result) {

@@ -29,6 +29,7 @@ embed/chart/chart.js
 embed/chart/chart.css
 embed/chart/chart_plotter_linear_domain.js
 embed/chart/chart_plot.js
+embed/chart/chart_summary.js
 embed/chart/chart_query_manager.js
 embed/top_series/top_series.js
 embed/top_series/top_series_table.js
