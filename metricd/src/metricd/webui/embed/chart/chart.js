@@ -57,6 +57,9 @@ var FnordMetricChart = function(viewport, params) {
     var elem = viewport.querySelector(".fm-chart-plot");
     var plotter = new FnordMetricChart.Plotter(elem, params);
     plotter.render(result);
+
+    var scaled_values = plotter.getScaledValues();
+    var tooltip = new FnordMetricChart.Tooltip(elem, scaled_values);
   }
 
   function renderSummaries(result) {

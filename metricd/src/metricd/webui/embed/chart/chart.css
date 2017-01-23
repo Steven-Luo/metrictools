@@ -57,6 +57,14 @@
   stroke-width: 2;
 }
 
+.fm-tooltip {
+  padding: 5px 7px;
+  color: #fff;
+  background: #333;
+  border-radius: 3px;
+  position: absolute;
+}
+
 /**.fm-chart circle.point {
   fill: transparent;
 }

@@ -33,6 +33,11 @@ FnordMetricChart.Plotter = function(elem, params) {
   var y_domain;
   var y_label_width;
   var y_labels;
+  var ppoints = [];
+
+  this.getScaledValues = function() {
+    return ppoints;
+  }
 
   this.render = function(result) {
     /* prepare axes */
@@ -41,6 +46,8 @@ FnordMetricChart.Plotter = function(elem, params) {
 
     /* prepare layout */
     prepareLayout(result);
+
+    preparePoints(result);
 
     /* draw the svg */
     draw(result);
@@ -54,6 +61,25 @@ FnordMetricChart.Plotter = function(elem, params) {
 
       resize_observer.observe(elem);
     }
+  }
+
+  function preparePoints(result) {
+
+    result.series.forEach(function(series) {
+      for (var i = 0; i < series.values.length; i++) {
+        var x = x_domain.convertDomainToScreen(series.time[i]);
+        var x_screen = x * (width - (canvas_margin_left + canvas_margin_right)) + canvas_margin_left;
+
+        if (series.values[i] === null) {
+          ppoints.push({ x: x_screen, y: null, value: null});
+        } else {
+          var y = y_domain.convertDomainToScreen(series.values[i]);
+          var y_screen = (1.0 - y) * (height - (canvas_margin_bottom + canvas_margin_top)) + canvas_margin_top;
+          ppoints.push({x: x_screen, y: y_screen, value: series.values[i]});
+        }
+      }
+    });
+
   }
 
   function prepareLayout(result) {
