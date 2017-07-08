@@ -154,7 +154,7 @@ public:
       double y,
       const std::string& point_type,
       double point_size,
-      const std::string& color,
+      const Colour& color,
       const std::string& class_name /* = "" */,
       const std::string& label /* = "" */,
       const std::string& series /* = "" */) override {
@@ -162,17 +162,13 @@ public:
     class_str += " ";
 
     std::string style_str;
-    if (color.size() > 3 && color.size() < 8 && color[0] == '#') {
-      style_str += "fill: " + color + ";";
-    } else {
-      class_str += color;
-    }
+    style_str += "fill: " + color.hex + ";";
 
     /* point_type: circle */
     // FIXPAUL escape label
     SVG_appendLine(
         "<circle cx='%f' cy='%f' r='%f' class='%s' fm:label='%s' "
-            "fm:series='%s', style='%s'></circle>\n",
+            "fm:series='%s' style='%s'></circle>\n",
         x,
         y,
         point_type == "none" ? 0 : point_size,
@@ -187,17 +183,13 @@ public:
       const std::string& line_style,
       double line_width,
       bool smooth,
-      const std::string& color,
+      const Colour& colour,
       const std::string& class_name = "") override {
     std::string class_str(class_name);
     class_str += " ";
 
-    std::string style_str;
-    if (color.size() > 3 && color.size() < 8 && color[0] == '#') {
-      style_str += "stroke: " + color + ";";
-    } else {
-      class_str += color;
-    }
+    std::string style_str = "fill: none;";
+    style_str += "stroke: " + colour.hex + ";";
 
     SVG_appendLine(
         "<path stroke-width='%f' class='%s' style='%s' d='",

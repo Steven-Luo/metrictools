@@ -29,6 +29,7 @@ libcplot_a_SOURCES = \
     pointchart.cc \
     pointchart.h \
     rendertarget.h \
+    rendertarget.cc \
     series.cc \
     series.h \
     seriesjoin.h \

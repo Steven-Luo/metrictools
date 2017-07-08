@@ -585,7 +585,7 @@ void Canvas::renderRightLegend(
         ly,
         std::get<2>(entry),
         kLegendPointSize,
-        std::get<1>(entry),
+        getColour(std::get<1>(entry)),
         "point");
 
     target->drawText(
@@ -663,7 +663,7 @@ void Canvas::renderLeftLegend(
         ly,
         std::get<2>(entry),
         kLegendPointSize,
-        std::get<1>(entry),
+        getColour(std::get<1>(entry)),
         "point");
 
     target->drawText(

@@ -227,7 +227,7 @@ void LineChart2D<TX, TY>::render(
       throw std::runtime_error("invalid point size");
     }
 
-    auto color = series->getProperty(Series::P_COLOR);
+    auto color = getColour(series->getProperty(Series::P_COLOR));
 
     for (const auto& point : series->getData()) {
       auto x = x_domain_.getAs<Domain<TX>>()->scale(point.x());

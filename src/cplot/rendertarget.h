@@ -16,6 +16,12 @@
 namespace stx {
 namespace chart {
 
+struct Colour {
+  std::string hex;
+};
+
+Colour getColour(const std::string& str);
+
 class RenderTarget {
 public:
   virtual ~RenderTarget() {}
@@ -51,7 +57,7 @@ public:
       double y,
       const std::string& point_type,
       double point_size,
-      const std::string& color,
+      const Colour& color,
       const std::string& class_name = "",
       const std::string& label = "",
       const std::string& series = "") = 0;
@@ -71,7 +77,7 @@ public:
       const std::string& line_style,
       double line_width,
       bool smooth,
-      const std::string& color,
+      const Colour& colour,
       const std::string& class_name = "") = 0;
 
 };
