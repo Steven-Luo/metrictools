@@ -33,7 +33,6 @@ libcplot_a_SOURCES = \
     series.cc \
     series.h \
     seriesjoin.h \
-    styles/style_default.h \
     svgtarget.h \
     timedomain.cc \
     timedomain.h \
