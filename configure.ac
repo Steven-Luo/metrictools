@@ -52,13 +52,8 @@ else
   AC_MSG_RESULT(["disabled"])
 fi
 
-AC_CONFIG_SUBDIRS([build/deps/libtransport])
 AC_CONFIG_FILES([
     Makefile
-    core/metrictools/Makefile
-    core/libcplot/Makefile
-    core/metrictools/storage/mysql/Makefile
-    core/metrictools/storage/sqlite/Makefile
-    test/Makefile])
+    src/cplot/Makefile])
 
 AC_OUTPUT

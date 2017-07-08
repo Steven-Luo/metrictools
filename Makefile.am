@@ -16,15 +16,12 @@ export AM_CXXFLAGS = \
     -Wno-invalid-offsetof \
     -DFNORDMETRIC_VERSION=\"v@PACKAGE_VERSION@\" \
     $(PTHREAD_CFLAGS) \
-    -I$(abs_top_srcdir)/core \
-    -I$(abs_top_srcdir)/build/deps/libtransport/src \
+    -I$(abs_top_srcdir)/src \
     -I$(abs_top_srcdir)/
 
 SUBDIRS = \
     . \
-    build/deps/libtransport \
-    core/libcplot \
-    core/metrictools \
+    src/cplot \
     test
 
 EXTRA_DIST =                             \
