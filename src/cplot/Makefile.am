@@ -36,4 +36,20 @@ libcplot_a_SOURCES = \
     svgtarget.h \
     timedomain.cc \
     timedomain.h \
+    util/autoref.h \
+    util/autoref.cc \
+    util/buffer.h \
+    util/buffer.cc \
+    util/exception.h \
+    util/exception.cc \
+    util/file.h \
+    util/file.cc \
+    util/ieee754.h \
+    util/ieee754.cc \
+    util/outputstream.h \
+    util/outputstream.cc \
+    util/stringutil.h \
+    util/stringutil.cc \
+    util/time.h \
+    util/time.cc \
     viewport.h

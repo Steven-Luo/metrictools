@@ -1,6 +1,8 @@
 ACLOCAL_AMFLAGS = -I m4
 AUTOMAKE_OPTIONS = foreign
 
+export AM_LDFLAGS=-L$(abs_top_builddir)/src/cplot
+
 export AM_CXXFLAGS = \
     -std=c++14 \
     -ftemplate-depth=500 \
@@ -22,7 +24,7 @@ export AM_CXXFLAGS = \
 SUBDIRS = \
     . \
     src/cplot \
-    test
+    examples/charts
 
 EXTRA_DIST =                             \
   autogen.sh                             \

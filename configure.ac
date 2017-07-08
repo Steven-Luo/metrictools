@@ -54,6 +54,7 @@ fi
 
 AC_CONFIG_FILES([
     Makefile
+    examples/charts/Makefile
     src/cplot/Makefile])
 
 AC_OUTPUT
